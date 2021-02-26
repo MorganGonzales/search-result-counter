@@ -26,8 +26,11 @@
 
             <div class="row">
                 <div class="col-md-6 order-md-2 mb-4">
-                    <h4>Result</h4>
-                    @php $rankings = session('rankings'); @endphp
+                    @php $rankings = session('rankings') ?? []; @endphp
+                    <h4 class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="text-muted">Result</span>
+                        <span class="badge badge-secondary badge-pill">{{ count($rankings) }}</span>
+                    </h4>
                     @if (!$rankings)
                     <p>No results</p>
                     @else
@@ -70,7 +73,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-lg btn-block">Perform Google Search</button>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Perform {{ ucfirst(env('SEARCH_ENGINE')) }} Search</button>
                     </form>
                 </div>
             </div>

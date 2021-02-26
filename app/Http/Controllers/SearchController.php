@@ -14,22 +14,11 @@ class SearchController extends Controller
 
     public function search(SearchRequest $request)
     {
-        $service = new GetUrlRankingsFromSearchResult($request->get('keyword'), $request->get('url'));
-//        $rankings = $service->execute();
+        $rankings = app(GetUrlRankingsFromSearchResult::class)
+            ->execute($request->get('keyword'), $request->get('url'));
 
-        $rankings = [
-            [
-                'rank' => '1st',
-                'title' => 'CreditorWatch: Business Credit Scores and Company Checks',
-                'link' => 'https://creditorwatch.com.au/',
-            ],
-            [
-                'rank' => '3rd',
-                'title' => 'Login - Company Credit Check Services - CreditorWatch',
-                'link' => 'https://creditorwatch.com.au/login',
-            ],
-        ];
-
-        return redirect()->route('search.index')->with('rankings', $rankings);
+        return redirect()
+            ->route('search.index')
+            ->with('rankings', $rankings);
     }
 }
