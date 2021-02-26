@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>CreditorWatch Search Result Counter</title>
+        <title>Search Result Counter</title>
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -17,11 +17,12 @@
     <body>
 
         <div class="container">
-            <div class="py-5 text-center">
-                <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-                <h2>Search Result Counter</h2>
-                <p class="lead">Below is a micro application made by Morgan Gonzales, in use as an assessment (tech exam) for the "Team Lead Full Stack Engineer" position at Emapta Philippines Inc. </p>
-            </div>
+            <section class="jumbotron text-center mt-4">
+                <div class="container">
+                    <h1 class="jumbotron-heading">Search Result Ranking</h1>
+                    <p class="lead text-muted">A micro web-application (created by <a class="font-semibold" href="https://www.linkedin.com/in/morgy">Morgan Gonzales</a>) that allows users to parse Google Search Results (or any search engines) and list all results where the link contains the given URL.</p>
+                </div>
+            </section>
 
             <div class="row">
                 <div class="col-md-6 order-md-2 mb-4">
@@ -50,7 +51,7 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="keyword">Keywords</label>
-                                <input type="text" class="form-control @error('keyword') is-invalid @enderror" id="keyword" name="keyword" placeholder="ex: creditorwatch">
+                                <input type="text" class="form-control @error('keyword') is-invalid @enderror" id="keyword" name="keyword" placeholder="creditorwatch">
 
                                 @error('keyword')
                                 <div class="invalid-feedback" role="alert">
@@ -60,7 +61,7 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="url">URL</label>
-                                <input type="text" class="form-control @error('url') is-invalid @enderror" id="url" name="url" placeholder="ex: www.creditorwatch.com.au">
+                                <input type="text" class="form-control @error('url') is-invalid @enderror" id="url" name="url" placeholder="creditorwatch.com.au">
 
                                 @error('url')
                                 <div class="invalid-feedback" role="alert">

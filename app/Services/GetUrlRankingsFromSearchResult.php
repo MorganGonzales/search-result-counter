@@ -50,10 +50,10 @@ class GetUrlRankingsFromSearchResult
             $startIndex = \last($searchResults)->queries->nextPage[0]->startIndex ?? self::MAX_RESULT_INDEX + 1;
         }
 
-        return iterator_to_array($this->gatherResultsWithMatchingUrl($searchResults));
+        return iterator_to_array($this->gatherResultsBasedOnUrlInput($searchResults));
     }
 
-    private function gatherResultsWithMatchingUrl(array $searchResults): \Generator
+    private function gatherResultsBasedOnUrlInput(array $searchResults): \Generator
     {
         foreach ($searchResults as $searchResult) {
             foreach ($searchResult->items as $index => $item) {
