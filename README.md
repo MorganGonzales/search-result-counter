@@ -16,8 +16,30 @@ Then install its dependencies using [Composer](https://getcomposer.org/).
 $ composer install
 ```
 
+Copy the .env.example file and rename it to **.env**. 
 
-## Design Patterns Used
+These variables are application specific hence needs to be specified.
+
+```
+APP_NAME='Search Result Ranking'
+APP_ENV=local
+APP_DEBUG=true
+APP_URL=http://search-result-ranking.herokuapp.com/
+```
+
+>>**Note:** Set APP_ENV=production when deploying in production
+
+You need to specify these fields in your **.env** to integrate this application with Google Custom Search API.
+
+```
+SEARCH_ENGINE_API_KEY=
+SEARCH_ENGINE_ID=
+```
+
+For more information on how to setup Google Custom Search API, you may refer to this [documentation](https://developers.google.com/custom-search/v1/introduction)
+
+
+## Design Patterns Applied
 
 ### [Factory Method](https://refactoring.guru/design-patterns/factory-method)
 
@@ -121,7 +143,7 @@ class GoogleSearchEngineBuilder implements SearchEngineBuilder
 }
 ```
 
-In this scenario, I didn't create a specific director class, but simply included it as part of the `GetUrlRankingsFromSearchResult` service class. 
+In this scenario, a specific director class was not created for simplicity. Instead, it was included as part of the `GetUrlRankingsFromSearchResult` service class. 
 This code snippet (which can be in a separate director class) is responsible for executing the building steps in a particular sequence (sequence does not matter much in this case) 
 
 ```php
@@ -138,5 +160,21 @@ private static function createSearchEngine(): SearchEngine
 }
 ```
 
+## Running Test
 
+To execute both unit and feature test, you may enter this command (on your local)
 
+```shell
+$ php artisan test
+```
+
+Alternatively, you can simply just run PHPUnit
+
+```shell
+$ vendor/bin/phpunit
+```
+
+## Developer Notes
+
+- The current search result is simply being flashed to the session variable for simplicity. If persistence of historical results will be needed, a database storage will be required.
+- If we want to support various search engines (other than Google), it would require to set a configuration file for each type as configuration options may vary.
