@@ -21,6 +21,11 @@
                 <div class="container">
                     <h1 class="jumbotron-heading">Search Result Ranking</h1>
                     <p class="lead text-muted">A micro web-application (created by <a class="font-semibold" href="https://www.linkedin.com/in/morgy">Morgan Gonzales</a>) that allows users to parse Google Search Results (or any search engines) and list all results where the link contains the given URL.</p>
+                    <p>
+                        <a href="https://github.com/MorganGonzales/search-result-ranking" class="btn btn-primary my-2" target="_blank">GitHub Repository</a>
+                        <a href="https://drive.google.com/file/d/1JnpQwCaJRf_VPiHFFvTktyLKn03rlWZZ/view?usp=sharing" class="btn btn-info my-2" target="_blank">View Morgan's CV</a>
+                        <a href="https://www.linkedin.com/in/morgy" class="btn btn-dark my-2" target="_blank">Connect with Morgan</a>
+                    </p>
                 </div>
             </section>
 
