@@ -29,7 +29,7 @@
                 </div>
             </section>
 
-            <div class="row">
+            <div class="row mb-4">
                 <div class="col-md-6 order-md-2 mb-4">
                     @php $rankings = session('rankings') ?? []; @endphp
                     <h4 class="d-flex justify-content-between align-items-center mb-3">
@@ -82,6 +82,18 @@
                     </form>
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="alert alert-info" role="alert">
+                        <h4 class="alert-heading">Reminder!</h4>
+                        <p>Since I'm only using a <strong>FREE</strong> access to Google's Custom Search API, this application is only limited to <strong>100 search request per day</strong>.</p>
+                        <hr>
+                        <p>It's also worth noting that since Google search only returns 10 results per search, each search execution sends upto 10 requests to be able to parse the first 100 results.</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
