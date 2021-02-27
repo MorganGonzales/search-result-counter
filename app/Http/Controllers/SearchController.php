@@ -9,7 +9,7 @@ class SearchController extends Controller
 {
     public function index()
     {
-        return view('search.index', ['rankings' => []]);
+        return view('search.index');
     }
 
     public function search(SearchRequest $request)

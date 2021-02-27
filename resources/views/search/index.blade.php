@@ -28,7 +28,7 @@
                 <div class="col-md-6 order-md-2 mb-4">
                     @php $rankings = session('rankings') ?? []; @endphp
                     <h4 class="d-flex justify-content-between align-items-center mb-3">
-                        <span class="text-muted">Result</span>
+                        <span class="text-muted">Result Rankings</span>
                         <span class="badge badge-secondary badge-pill">{{ count($rankings) }}</span>
                     </h4>
                     @if (!$rankings)

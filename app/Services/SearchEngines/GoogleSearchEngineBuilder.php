@@ -54,7 +54,7 @@ class GoogleSearchEngineBuilder implements SearchEngineBuilder
         return $searchEngine;
     }
 
-    private function checkIfReadyToBuild()
+    private function checkIfReadyToBuild(): void
     {
         $className = __CLASS__;
 
